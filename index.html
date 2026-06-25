@@ -1,11 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!doctype html>
+<html lang="es"><head><script src="/_sdk/telemetry_sdk.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Git y GitHub</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .mono { font-family: 'Space Mono', monospace; }
+    .terminal {
+      background: #1a1b26;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      color: #a9b1d6;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
+    .terminal .prompt { color: #7aa2f7; }
+    .terminal .comment { color: #565f89; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen" style="background: rgb(248, 250, 252);">
+  <header class="relative w-full overflow-hidden" style="height: calc(50 * min(var(--vh, 1vh), 1vh));"><img data-template-id="hero-img" class="canva-image absolute inset-0 w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/6424589/pexels-photo-6424589.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="A laptop showcasing colorful code in a dark environment">
+   <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+    <div class="text-center px-4">
+     <h1 data-template-id="hero-title" class="canva-text text-white font-bold" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 32px;">Guía de Git y GitHub</h1>
+     <p data-template-id="hero-subtitle" class="canva-text mt-4 text-white/80 max-w-2xl mx-auto" style="color: rgb(226, 232, 240); font-weight: 400; font-style: normal; font-size: 18px;">Aprende a controlar versiones de tu código y colaborar con otros desarrolladores de forma eficiente.</p>
+    </div>
+   </div>
+  </header>
+  <nav data-template-id="nav-bar" class="canva-section sticky top-0 z-10 border-b border-gray-200" style="background: rgb(255, 255, 255);">
+   <div class="max-w-4xl mx-auto flex gap-6 px-6 py-3 overflow-x-auto text-sm font-medium"><a href="#git" class="hover:text-blue-600 whitespace-nowrap">¿Qué es Git?</a> <a href="#commands" class="hover:text-blue-600 whitespace-nowrap">Comandos Básicos</a> <a href="#github" class="hover:text-blue-600 whitespace-nowrap">¿Qué es GitHub?</a> <a href="#workflow" class="hover:text-blue-600 whitespace-nowrap">Flujo de Trabajo</a> <a href="#tips" class="hover:text-blue-600 whitespace-nowrap">Tips</a>
+   </div>
+  </nav>
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+   <section id="git">
+    <h2 data-template-id="git-title" class="canva-text font-bold" style="color: rgb(30, 41, 59); font-weight: 700; font-style: normal; font-size: 24px;">¿Qué es Git?</h2>
+    <p data-template-id="git-desc" class="canva-text mt-4 leading-relaxed" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Creado por Linus Torvalds en 2005 (creador de Linux). Git es un sistema de control de versiones que le permite a los desarrolladores trabajar de forma distribuida y registrar el progreso de un proyecto mientras este evoluciona.</p>
+   </section>
+   <section id="commands">
+    <h2 data-template-id="commands-title" class="canva-text font-bold" style="color: rgb(30, 41, 59); font-weight: 700; font-style: normal; font-size: 24px;">Comandos Básicos de Git</h2>
+    <p data-template-id="commands-desc" class="canva-text mt-4 leading-relaxed" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Estos son los comandos fundamentales que usarás en tu día a día trabajando con Git:</p>
+    <div class="terminal mt-6">
+     <p><span class="comment"># Inicializar un repositorio</span></p>
+     <p><span class="prompt">$</span> git init</p>
+     <p class="mt-3"><span class="comment"># Agregar archivos al staging</span></p>
+     <p><span class="prompt">$</span> git add .</p>
+     <p class="mt-3"><span class="comment"># Crear un commit</span></p>
+     <p><span class="prompt">$</span> git commit -m "primer commit"</p>
+     <p class="mt-3"><span class="comment"># Ver el estado del repositorio</span></p>
+     <p><span class="prompt">$</span> git status</p>
+     <p class="mt-3"><span class="comment"># Ver historial de commits</span></p>
+     <p><span class="prompt">$</span> git log --oneline</p>
+    </div>
+   </section>
+   <section id="github">
+    <h2 data-template-id="github-title" class="canva-text font-bold" style="color: rgb(30, 41, 59); font-weight: 700; font-style: normal; font-size: 24px;">¿Qué es GitHub?</h2>
+    <p data-template-id="github-desc" class="canva-text mt-4 leading-relaxed" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">GitHub es un servidor de alojamiento en línea para proyectos basados en Git. Permite el desarrollo de manera remota y proporciona seguridad de la nube creando un entorno centralizado donde reside la "copia principal" del proyecto.</p>
+   </section>
+   <section id="workflow">
+    <h2 data-template-id="workflow-title" class="canva-text font-bold" style="color: rgb(30, 41, 59); font-weight: 700; font-style: normal; font-size: 24px;">Flujo de Trabajo con GitHub</h2>
+    <p data-template-id="workflow-desc" class="canva-text mt-4 leading-relaxed" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">El flujo típico consiste en crear ramas para nuevas funcionalidades, hacer commits, subir los cambios a GitHub y crear un Pull Request para revisión:</p>
+    <div class="terminal mt-6">
+     <p><span class="comment"># Conectar con repositorio remoto</span></p>
+     <p><span class="prompt">$</span> git remote add origin https://github.com/usuario/repo.git</p>
+     <p class="mt-3"><span class="comment"># Subir cambios</span></p>
+     <p><span class="prompt">$</span> git push -u origin main</p>
+     <p class="mt-3"><span class="comment"># Crear una rama</span></p>
+     <p><span class="prompt">$</span> git checkout -b nueva-feature</p>
+     <p class="mt-3"><span class="comment"># Fusionar rama</span></p>
+     <p><span class="prompt">$</span> git merge nueva-feature</p>
+    </div>
+   </section>
+   <section id="tips">
+    <h2 data-template-id="tips-title" class="canva-text font-bold" style="color: rgb(30, 41, 59); font-weight: 700; font-style: normal; font-size: 24px;">Tips y Buenas Prácticas</h2>
+    <ul class="mt-4 space-y-3">
+     <li data-template-id="tip-1" class="canva-text pl-4 border-l-4 border-blue-500" style="color: rgb(51, 65, 85); font-weight: 400; font-style: normal; font-size: 16px;">Haz commits pequeños y frecuentes con mensajes descriptivos.</li>
+     <li data-template-id="tip-2" class="canva-text pl-4 border-l-4 border-blue-500" style="color: rgb(51, 65, 85); font-weight: 400; font-style: normal; font-size: 16px;">Usa ramas para cada feature o bugfix — nunca trabajes directamente en main.</li>
+     <li data-template-id="tip-3" class="canva-text pl-4 border-l-4 border-blue-500" style="color: rgb(51, 65, 85); font-weight: 400; font-style: normal; font-size: 16px;">Revisa el diff antes de hacer commit con git diff --staged.</li>
+     <li data-template-id="tip-4" class="canva-text pl-4 border-l-4 border-blue-500" style="color: rgb(51, 65, 85); font-weight: 400; font-style: normal; font-size: 16px;">Agrega un archivo .gitignore para excluir archivos innecesarios del repositorio.</li>
+    </ul>
+   </section>
+  </main>
+  <footer data-template-id="footer" class="canva-footer text-center py-8 border-t" style="background: rgb(248, 250, 252);">
+   <p data-template-id="footer-text" class="canva-text text-sm" style="color: rgb(148, 163, 184); font-weight: 700; font-style: normal; font-size: 16px;">Página creada por: Ninahuanca Daniel · Huarsaya Miguel · Cabello Yamil</p>
+  </footer>
+  <script src="/_sdk/editing_sdk.js"></script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a117d501505a484e',t:'MTc4MjQzMDk4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body></html>
